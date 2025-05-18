@@ -5,31 +5,34 @@ import { Progress } from "@/components/ui/progress";
 type Skill = {
   name: string;
   level: number;
-  category: "frontend" | "backend" | "design" | "tools";
+  category: "frontend" | "backend" | "tools" | "other";
 };
 
 const Skills = () => {
-  // Sample skills data
+  // Skills data based on your requirements
   const skillsData: Skill[] = [
-    { name: "HTML & CSS", level: 95, category: "frontend" },
-    { name: "JavaScript", level: 90, category: "frontend" },
-    { name: "React", level: 88, category: "frontend" },
-    { name: "TypeScript", level: 82, category: "frontend" },
-    { name: "Node.js", level: 75, category: "backend" },
-    { name: "Express", level: 80, category: "backend" },
-    { name: "MongoDB", level: 75, category: "backend" },
-    { name: "UI Design", level: 85, category: "design" },
-    { name: "Figma", level: 90, category: "design" },
+    { name: "React.js", level: 90, category: "frontend" },
+    { name: "JavaScript", level: 85, category: "frontend" },
+    { name: "TypeScript", level: 80, category: "frontend" },
+    { name: "Tailwind CSS", level: 85, category: "frontend" },
+    { name: "Redux", level: 75, category: "frontend" },
+    { name: "Material UI", level: 80, category: "frontend" },
+    { name: "Java", level: 75, category: "backend" },
+    { name: "Spring Boot", level: 70, category: "backend" },
+    { name: "SQL", level: 80, category: "backend" },
+    { name: "DBMS", level: 75, category: "backend" },
     { name: "Git", level: 85, category: "tools" },
-    { name: "Docker", level: 70, category: "tools" },
-    { name: "AWS", level: 65, category: "tools" },
+    { name: "REST APIs", level: 80, category: "tools" },
+    { name: "Postman", level: 75, category: "tools" },
+    { name: "Problem Solving", level: 90, category: "other" },
+    { name: "Agile Methodology", level: 80, category: "other" },
   ];
 
   const categories = [
     { id: "frontend", name: "Frontend" },
     { id: "backend", name: "Backend" },
-    { id: "design", name: "Design" },
     { id: "tools", name: "Tools" },
+    { id: "other", name: "Other Skills" },
   ];
 
   useEffect(() => {
@@ -64,7 +67,7 @@ const Skills = () => {
           <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {categories.map((category) => (
             <div key={category.id} className="animate-fade-in-up">
               <h3 className="heading-md mb-6 text-portfolio-dark">{category.name}</h3>

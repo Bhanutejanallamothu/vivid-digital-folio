@@ -17,10 +17,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-display font-bold">
-              Portfolio<span className="text-portfolio-blue">.</span>
+              Bhanu<span className="text-portfolio-blue">Teja</span>
             </h2>
             <p className="text-gray-400 mt-2">
-              Creating beautiful digital experiences
+              Frontend Developer & CS Student
             </p>
           </div>
           
@@ -33,7 +33,7 @@ const Footer = () => {
               <ArrowUp size={20} />
             </button>
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} Your Name. All rights reserved.
+              &copy; {currentYear} Nallamothu BhanuTeja. All rights reserved.
             </p>
           </div>
         </div>

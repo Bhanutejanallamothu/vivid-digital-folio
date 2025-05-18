@@ -29,17 +29,15 @@ const About = () => {
           {/* Content Section */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <h3 className="heading-md mb-4 text-portfolio-dark">
-              Frontend Developer & UI/UX Designer
+              Frontend Developer & CS Student
             </h3>
             <p className="text-gray-600 mb-6">
-              I'm a passionate web developer and designer with over 5 years of experience creating
-              modern, responsive websites and applications. I combine technical expertise with 
-              creative design to build engaging digital experiences that users love.
+              Dedicated and driven B.Tech Computer Science student with a passion for frontend 
+              development and building user-focused web apps using React.js, Tailwind CSS, and TypeScript.
             </p>
             <p className="text-gray-600 mb-8">
-              My goal is to craft clean, efficient code and intuitive interfaces that solve real
-              problems. I'm constantly learning new technologies and techniques to stay at the 
-              forefront of web development.
+              Strong understanding of responsive design, REST APIs, and modern web technologies. 
+              Experienced in project development, UI/UX design, and collaborative software engineering.
             </p>
 
             {/* Key Points */}
@@ -47,8 +45,8 @@ const About = () => {
               <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
                 <User size={24} className="text-portfolio-blue mr-3" />
                 <div>
-                  <h4 className="font-semibold">Experience</h4>
-                  <p className="text-sm text-gray-500">5+ Years</p>
+                  <h4 className="font-semibold">Education</h4>
+                  <p className="text-sm text-gray-500">B.Tech CSE</p>
                 </div>
               </div>
               
@@ -56,15 +54,15 @@ const About = () => {
                 <Star size={24} className="text-portfolio-blue mr-3" />
                 <div>
                   <h4 className="font-semibold">Projects</h4>
-                  <p className="text-sm text-gray-500">50+ Completed</p>
+                  <p className="text-sm text-gray-500">Full-Stack Apps</p>
                 </div>
               </div>
               
               <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
                 <Award size={24} className="text-portfolio-blue mr-3" />
                 <div>
-                  <h4 className="font-semibold">Awards</h4>
-                  <p className="text-sm text-gray-500">10+ Received</p>
+                  <h4 className="font-semibold">Certifications</h4>
+                  <p className="text-sm text-gray-500">Multiple Fields</p>
                 </div>
               </div>
             </div>

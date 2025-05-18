@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ExternalLink, Link } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 type Project = {
   id: number;
@@ -8,48 +8,39 @@ type Project = {
   description: string;
   image: string;
   tags: string[];
+  githubLink: string;
   demoLink: string;
-  codeLink: string;
 };
 
 const Projects = () => {
-  // Sample projects data
+  // Projects data
   const projectsData: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform with shopping cart, user authentication, and payment processing integration.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      title: "News Aggregator",
+      description: "A full-stack app that aggregates news using APIs. Designed entire frontend architecture, implemented responsive UI and state management using Redux and React.",
+      image: "https://images.unsplash.com/photo-1495020689067-958852a7765e",
+      tags: ["React.js", "Redux", "API Integration", "Responsive Design"],
+      githubLink: "https://github.com/Bhanutejanallamothu/newsaggregator-.git",
       demoLink: "#",
-      codeLink: "#",
     },
     {
       id: 2,
-      title: "Finance Dashboard",
-      description: "Interactive dashboard that visualizes financial data with charts and provides insights for better decision making.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      tags: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+      title: "Gov-Connect",
+      description: "A platform built to connect citizens to government schemes. Created a seamless frontend experience using React, along with dynamic form handling and API integration.",
+      image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952",
+      tags: ["React.js", "API Integration", "Form Handling", "UI/UX"],
+      githubLink: "https://github.com/Bhanutejanallamothu/Gov-Connect.git",
       demoLink: "#",
-      codeLink: "#",
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, assignments, and progress tracking.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      tags: ["React", "Firebase", "Tailwind CSS", "Redux"],
-      demoLink: "#",
-      codeLink: "#",
-    },
-    {
-      id: 4,
       title: "Portfolio Website",
-      description: "Custom portfolio website design for creatives to showcase their work with optimal visual impact.",
-      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
-      tags: ["HTML", "SCSS", "JavaScript", "GSAP"],
+      description: "A responsive portfolio website showcasing skills and projects. Built with React, Tailwind CSS, and modern animation techniques for a smooth user experience.",
+      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+      tags: ["React.js", "Tailwind CSS", "Responsive Design"],
+      githubLink: "#",
       demoLink: "#",
-      codeLink: "#",
     },
   ];
 
@@ -63,12 +54,12 @@ const Projects = () => {
             My <span className="text-portfolio-blue">Projects</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and approach to design and development.
+            Here are some of my recent projects that showcase my skills in frontend development and more.
           </p>
           <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {projectsData.map((project, index) => (
             <div 
               key={project.id}
@@ -92,12 +83,12 @@ const Projects = () => {
                       <ExternalLink size={18} className="text-portfolio-dark" />
                     </a>
                     <a
-                      href={project.codeLink}
+                      href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white/90 hover:bg-white p-2 rounded-full transition-all"
                     >
-                      <Link size={18} className="text-portfolio-dark" />
+                      <Github size={18} className="text-portfolio-dark" />
                     </a>
                   </div>
                 </div>

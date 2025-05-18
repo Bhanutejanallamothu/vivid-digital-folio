@@ -28,10 +28,10 @@ const Hero = () => {
             Hello, I'm
           </h2>
           <h1 className="heading-xl mb-6">
-            <span className="text-gradient">Your Name</span>
+            <span className="text-gradient">Nallamothu BhanuTeja</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto mb-8">
-            A passionate designer & developer creating beautiful digital experiences
+            A passionate frontend developer creating beautiful digital experiences with React
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a href="#projects" className="button-primary w-full sm:w-auto">

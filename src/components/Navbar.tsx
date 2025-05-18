@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -41,7 +42,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center">
           <a href="#home" className="text-xl md:text-2xl font-display font-bold text-portfolio-dark">
-            Portfolio<span className="text-portfolio-blue">.</span>
+            Bhanu<span className="text-portfolio-blue">Teja</span>
           </a>
         </div>
 
