@@ -55,13 +55,13 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="section-padding bg-gray-50">
+    <section id="skills" className="section-padding bg-muted dark:bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-4">
             My <span className="text-portfolio-blue">Skills</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-foreground max-w-2xl mx-auto">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
           <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
@@ -70,14 +70,14 @@ const Skills = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {categories.map((category) => (
             <div key={category.id} className="animate-fade-in-up">
-              <h3 className="heading-md mb-6 text-portfolio-dark">{category.name}</h3>
+              <h3 className="heading-md mb-6 text-foreground">{category.name}</h3>
               <div className="space-y-5">
                 {skillsData
                   .filter((skill) => skill.category === category.id)
                   .map((skill, index) => (
                     <div key={index} className="skill-progress">
                       <div className="mb-2">
-                        <span className="font-medium">{skill.name}</span>
+                        <span className="font-medium text-foreground">{skill.name}</span>
                       </div>
                       <Progress value={skill.level} className="h-2" />
                     </div>

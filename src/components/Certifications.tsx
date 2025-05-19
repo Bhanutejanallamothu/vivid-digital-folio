@@ -48,7 +48,7 @@ const Certifications = () => {
           <h2 className="heading-lg mb-4">
             My <span className="text-portfolio-blue">Certifications</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-foreground max-w-2xl mx-auto">
             Professional certifications that validate my skills and knowledge.
           </p>
           <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
@@ -58,7 +58,7 @@ const Certifications = () => {
           {certifications.map((cert, index) => (
             <div 
               key={cert.id} 
-              className="bg-white rounded-xl p-6 shadow-md flex flex-col items-center text-center animate-fade-in-up"
+              className="bg-card rounded-xl p-6 shadow-md flex flex-col items-center text-center animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-16 h-16 bg-portfolio-blue/10 rounded-full flex items-center justify-center mb-4">
@@ -68,9 +68,9 @@ const Certifications = () => {
                   <Award className="w-8 h-8 text-portfolio-blue" />
                 )}
               </div>
-              <h3 className="font-display font-semibold text-lg mb-2">{cert.name}</h3>
-              <p className="text-gray-600 text-sm mb-1">{cert.issuer}</p>
-              <p className="text-gray-500 text-sm">{cert.date}</p>
+              <h3 className="font-display font-semibold text-lg mb-2 text-foreground">{cert.name}</h3>
+              <p className="text-muted-foreground text-sm mb-1">{cert.issuer}</p>
+              <p className="text-muted-foreground text-sm">{cert.date}</p>
             </div>
           ))}
         </div>
