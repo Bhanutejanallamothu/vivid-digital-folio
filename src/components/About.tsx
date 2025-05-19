@@ -1,5 +1,6 @@
 
 import { User, Star, Award } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const About = () => {
   return (
@@ -13,14 +14,21 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
+          {/* Image Section with Frame */}
           <div className="relative animate-fade-in-up">
-            <div className="aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                alt="Nallamothu BhanuTeja"
-                className="w-full h-full object-cover"
-              />
+            <div className="relative max-w-md mx-auto">
+              {/* Decorative frame elements */}
+              <div className="absolute inset-0 border-8 border-portfolio-blue rounded-2xl transform rotate-3 -z-10"></div>
+              <div className="absolute inset-0 border-8 border-portfolio-purple rounded-2xl transform -rotate-2 -z-10"></div>
+              
+              {/* Profile image */}
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-xl relative z-10">
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                  alt="Nallamothu BhanuTeja"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-portfolio-blue rounded-full -z-10"></div>
             <div className="absolute -top-6 -left-6 w-24 h-24 bg-portfolio-purple rounded-full -z-10"></div>
