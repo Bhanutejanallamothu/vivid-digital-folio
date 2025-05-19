@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -83,6 +82,20 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Ensure text colors are theme-compatible */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+  
+  p {
+    @apply text-foreground;
+  }
+  
+  /* Make sure gradient text remains visible in dark mode */
+  .text-gradient {
+    @apply dark:from-white dark:via-white/90 dark:to-white/70;
+  }
 }
 
 @layer components {
@@ -118,25 +131,25 @@
     @apply px-6 py-3 rounded-md border-2 border-primary text-primary font-medium transition-all hover:bg-primary/10;
   }
 
-  /* Gradient theme classes */
+  /* Gradient theme classes updated for better dark mode compatibility */
   .gradient-blue {
-    @apply bg-gradient-to-r from-blue-500 to-indigo-500;
+    @apply bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400;
   }
   
   .gradient-purple {
-    @apply bg-gradient-to-r from-violet-500 to-purple-500;
+    @apply bg-gradient-to-r from-violet-500 to-purple-500 dark:from-violet-400 dark:to-purple-400;
   }
   
   .gradient-teal {
-    @apply bg-gradient-to-r from-teal-400 to-emerald-500;
+    @apply bg-gradient-to-r from-teal-400 to-emerald-500 dark:from-teal-300 dark:to-emerald-400;
   }
   
   .gradient-sunset {
-    @apply bg-gradient-to-r from-orange-500 to-rose-500;
+    @apply bg-gradient-to-r from-orange-500 to-rose-500 dark:from-orange-400 dark:to-rose-400;
   }
   
   .gradient-ocean {
-    @apply bg-gradient-to-r from-cyan-400 to-blue-500;
+    @apply bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-cyan-300 dark:to-blue-400;
   }
 }
 
@@ -151,6 +164,14 @@
   color: transparent;
   background-size: 200% auto;
   animation: textGradient 5s linear infinite;
+}
+
+/* Dark mode text gradient */
+.dark .text-gradient {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes textGradient {

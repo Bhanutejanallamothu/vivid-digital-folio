@@ -19,13 +19,27 @@ export const ThemeToggle = () => {
 
   return (
     <div className="flex items-center gap-2">
-      <Sun size={18} className={`transition-opacity ${theme === 'light' ? 'opacity-100' : 'opacity-50'}`} />
+      <Sun 
+        size={18} 
+        className={`transition-all ${
+          theme === 'light' 
+            ? 'text-portfolio-blue opacity-100' 
+            : 'text-muted-foreground opacity-50'
+        }`} 
+      />
       <Switch
         checked={theme === "dark"}
         onCheckedChange={toggleTheme}
         className="data-[state=checked]:bg-portfolio-blue data-[state=unchecked]:bg-portfolio-purple"
       />
-      <Moon size={18} className={`transition-opacity ${theme === 'dark' ? 'opacity-100' : 'opacity-50'}`} />
+      <Moon 
+        size={18} 
+        className={`transition-all ${
+          theme === 'dark' 
+            ? 'text-portfolio-purple opacity-100' 
+            : 'text-muted-foreground opacity-50'
+        }`} 
+      />
     </div>
   );
 };
