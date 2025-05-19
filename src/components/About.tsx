@@ -18,7 +18,7 @@ const About = () => {
             <div className="aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-                alt="Professional Portrait"
+                alt="Nallamothu BhanuTeja"
                 className="w-full h-full object-cover"
               />
             </div>

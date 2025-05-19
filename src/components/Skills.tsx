@@ -76,9 +76,8 @@ const Skills = () => {
                   .filter((skill) => skill.category === category.id)
                   .map((skill, index) => (
                     <div key={index} className="skill-progress">
-                      <div className="flex justify-between mb-2">
+                      <div className="mb-2">
                         <span className="font-medium">{skill.name}</span>
-                        <span>{skill.level}%</span>
                       </div>
                       <Progress value={skill.level} className="h-2" />
                     </div>
