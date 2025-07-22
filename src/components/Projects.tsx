@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -49,56 +50,76 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-4">
-            My <span className="text-portfolio-blue">Projects</span>
+            Bhanuteja's <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Here are some of my recent projects that showcase my skills in frontend development and more.
           </p>
-          <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {projectsData.map((project, index) => (
             <div 
               key={project.id}
-              className="group bg-white rounded-xl overflow-hidden shadow-md card-hover animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className="group underwater-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up border-0"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="relative aspect-video overflow-hidden bg-gray-100">
+              <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted/50 to-muted">
                 <iframe
                   src={project.previewUrl}
                   title={`${project.title} Preview`}
-                  className="w-full h-full border-0 transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full border-0 transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
-                  sandbox="allow-scripts allow-same-origin"
+                  sandbox="allow-scripts allow-same-origin allow-forms"
+                  scrolling="no"
+                  style={{
+                    overflow: 'hidden',
+                    msOverflowStyle: 'none',
+                    scrollbarWidth: 'none'
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end pointer-events-none">
-                  <div className="p-4 w-full flex justify-end gap-3">
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white/90 hover:bg-white p-2 rounded-full transition-all pointer-events-auto"
-                    >
-                      <ExternalLink size={18} className="text-portfolio-dark" />
-                    </a>
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-white/90 hover:bg-white p-2 rounded-full transition-all pointer-events-auto"
-                    >
-                      <Github size={18} className="text-portfolio-dark" />
-                    </a>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
+                  <div className="p-4 w-full flex justify-end gap-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    {project.demoLink !== "#" && (
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/95 backdrop-blur-sm hover:bg-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                        aria-label="View live demo"
+                      >
+                        <ExternalLink size={20} className="text-portfolio-dark" />
+                      </a>
+                    )}
+                    {project.githubLink !== "#" && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/95 backdrop-blur-sm hover:bg-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+                        aria-label="View source code"
+                      >
+                        <Github size={20} className="text-portfolio-dark" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-display font-semibold mb-3 text-portfolio-dark">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+              
+              <div className="p-6 lg:p-8 space-y-4">
+                <h3 className="text-xl lg:text-2xl font-display font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="text-xs font-medium px-2 py-1 bg-gray-100 rounded-full text-gray-600">
+                    <span 
+                      key={i} 
+                      className="text-xs lg:text-sm font-medium px-3 py-1.5 bg-primary/10 text-primary rounded-full border border-primary/20 hover:bg-primary/20 transition-colors duration-300"
+                    >
                       {tag}
                     </span>
                   ))}
@@ -108,9 +129,13 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <a href="#contact" className="button-secondary">
+        <div className="text-center mt-16">
+          <a 
+            href="#contact" 
+            className="button-primary inline-flex items-center gap-2 text-lg px-8 py-4 hover:shadow-xl transition-all duration-300"
+          >
             Interested in working together?
+            <ExternalLink size={20} />
           </a>
         </div>
       </div>
