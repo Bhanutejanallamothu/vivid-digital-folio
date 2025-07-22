@@ -35,25 +35,25 @@ const Navbar = () => {
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md shadow-md py-4"
-          : "bg-transparent py-6"
+          ? "bg-background/90 backdrop-blur-md shadow-md py-2 md:py-4"
+          : "bg-transparent py-4 md:py-6"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-4">
+      <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="#home" className="text-xl md:text-2xl font-display font-bold text-foreground">
+          <a href="#home" className="text-lg sm:text-xl md:text-2xl font-display font-bold text-foreground">
             Bhanu<span className="text-primary">Teja</span>
           </a>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="font-medium text-foreground hover:text-primary transition-colors"
+              className="font-medium text-foreground hover:text-primary transition-colors text-sm lg:text-base"
             >
               {item.name}
             </a>
@@ -64,27 +64,27 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Trigger */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-3 sm:gap-4">
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-foreground focus:outline-none"
+            className="text-foreground focus:outline-none p-1"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background shadow-lg py-4 px-4 animate-fade-in-up">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border shadow-lg py-4 px-4 animate-fade-in-up">
           <div className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-medium text-foreground hover:text-primary transition-colors py-2"
+                className="font-medium text-foreground hover:text-primary transition-colors py-2 text-base"
               >
                 {item.name}
               </a>

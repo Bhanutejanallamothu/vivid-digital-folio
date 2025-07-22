@@ -55,29 +55,30 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className="section-padding bg-muted dark:bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="heading-lg mb-4">
-            My <span className="text-portfolio-blue">Skills</span>
+    <section id="skills" className="section-padding bg-muted/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 text-foreground">
+            My <span className="text-primary">Skills</span>
           </h2>
-          <p className="text-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Here are the technologies and tools I work with to bring ideas to life.
           </p>
-          <div className="w-24 h-1 bg-portfolio-blue mx-auto mt-4"></div>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-primary mx-auto mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {categories.map((category) => (
             <div key={category.id} className="animate-fade-in-up">
-              <h3 className="heading-md mb-6 text-foreground">{category.name}</h3>
-              <div className="space-y-5">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-semibold mb-4 md:mb-6 text-foreground">{category.name}</h3>
+              <div className="space-y-4 md:space-y-5">
                 {skillsData
                   .filter((skill) => skill.category === category.id)
                   .map((skill, index) => (
                     <div key={index} className="skill-progress">
-                      <div className="mb-2">
-                        <span className="font-medium text-foreground">{skill.name}</span>
+                      <div className="mb-2 flex justify-between items-center">
+                        <span className="text-sm sm:text-base font-medium text-foreground">{skill.name}</span>
+                        <span className="text-xs sm:text-sm text-muted-foreground">{skill.level}%</span>
                       </div>
                       <Progress value={skill.level} className="h-2" />
                     </div>
