@@ -77,7 +77,64 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans transition-colors duration-300;
+    @apply text-foreground font-sans transition-colors duration-300;
+    background: linear-gradient(
+      180deg,
+      hsl(195, 100%, 85%) 0%,
+      hsl(200, 90%, 70%) 20%,
+      hsl(205, 80%, 55%) 40%,
+      hsl(210, 70%, 40%) 60%,
+      hsl(215, 60%, 25%) 80%,
+      hsl(220, 50%, 15%) 100%
+    );
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse 30% 50% at 20% 0%, rgba(255, 255, 255, 0.3) 0%, transparent 60%),
+      radial-gradient(ellipse 25% 40% at 40% 0%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse 35% 60% at 60% 0%, rgba(255, 255, 255, 0.25) 0%, transparent 70%),
+      radial-gradient(ellipse 20% 30% at 80% 0%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
+      linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.03) 75%,
+        transparent 100%
+      );
+    pointer-events: none;
+    z-index: -1;
+    animation: underwater-light 8s ease-in-out infinite alternate;
+  }
+
+  .dark body {
+    background: linear-gradient(
+      180deg,
+      hsl(220, 50%, 15%) 0%,
+      hsl(215, 60%, 12%) 20%,
+      hsl(210, 70%, 8%) 40%,
+      hsl(205, 80%, 5%) 60%,
+      hsl(200, 90%, 3%) 80%,
+      hsl(195, 100%, 2%) 100%
+    );
+  }
+
+  .dark body::before {
+    background: 
+      radial-gradient(ellipse 30% 50% at 20% 0%, rgba(100, 200, 255, 0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 25% 40% at 40% 0%, rgba(120, 180, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse 35% 60% at 60% 0%, rgba(80, 160, 255, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 20% 30% at 80% 0%, rgba(140, 200, 255, 0.08) 0%, transparent 40%);
   }
 
   html {
@@ -104,6 +161,21 @@
     html {
       font-size: 16px;
     }
+  }
+}
+
+@keyframes underwater-light {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(5px) scale(0.98);
   }
 }
 
@@ -159,6 +231,11 @@
   
   .gradient-ocean {
     @apply bg-gradient-to-r from-cyan-400 to-blue-500 dark:from-cyan-300 dark:to-blue-400;
+  }
+
+  /* Underwater themed cards */
+  .underwater-card {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border border-white/20 dark:border-gray-700/30;
   }
 }
 
