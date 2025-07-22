@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
@@ -13,7 +12,6 @@ type Project = {
 };
 
 const Projects = () => {
-  // Projects data with iframe preview URLs
   const projectsData: Project[] = [
     {
       id: 1,
@@ -37,7 +35,7 @@ const Projects = () => {
       id: 3,
       title: "Portfolio Website",
       description: "A responsive portfolio website showcasing skills and projects. Built with React, Tailwind CSS, and modern animation techniques for a smooth user experience.",
-      previewUrl: "https://preview--vivid-digital-folio.lovable.app/", // You can replace this with your actual portfolio URL
+      previewUrl: "https://preview--vivid-digital-folio.lovable.app/",
       tags: ["React.js", "Tailwind CSS", "Responsive Design"],
       githubLink: "#",
       demoLink: "#",
